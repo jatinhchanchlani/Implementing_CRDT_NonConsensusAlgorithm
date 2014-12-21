@@ -32,9 +32,17 @@ public interface CacheInterface {
 
     /**
      * Retrieve all entries
-     * 
+     *
      * @return a list of entries
      */
     List<Entry> getAll();
+
+
+    /**
+     * Delete entry from the cache
+     *
+     * @return a String
+     */
+    String deleteEntry(Long key);
 
 }

@@ -4,16 +4,28 @@ public class Client {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Starting Cache Client...");
-        CacheServiceInterface cache = new DistributedCacheService(
-                "http://localhost:3000");
 
-        cache.put(1, "foo");
-        System.out.println("put(1 => foo)");
+        CRDTClient client = new CRDTClient();
 
-        String value = cache.get(1);
-        System.out.println("get(1) => " + value);
+         client.put(1, "a");
+         System.out.println("Sleep for 30 seconds after first write");
+         Thread.sleep(30000);
 
-        System.out.println("Existing Cache Client...");
-    }
+         client.put(1, "b");
+         System.out.println("Sleep for 30 seconds after second write");
+         Thread.sleep(30000);
+
+         String value = client.get(1);
+
+
+         System.out.println("Existing Cache Client...");
+
+}
+
+
+
+
+
+
 
 }

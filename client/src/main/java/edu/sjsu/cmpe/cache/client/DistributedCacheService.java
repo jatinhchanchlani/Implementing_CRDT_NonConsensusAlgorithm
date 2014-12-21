@@ -15,8 +15,12 @@ public class DistributedCacheService implements CacheServiceInterface {
     public DistributedCacheService(String serverUrl) {
         this.cacheServerUrl = serverUrl;
     }
+    
+    public String getCacheServerUrl() {
+		return cacheServerUrl;
+	}
 
-    /**
+	/**
      * @see edu.sjsu.cmpe.cache.client.CacheServiceInterface#get(long)
      */
     @Override
